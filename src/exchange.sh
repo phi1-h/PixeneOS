@@ -28,8 +28,16 @@ function base64_decode() {
   echo -e "\nDecoding keys from base64..."
 
   # Check if any of the KEYS or individual key values are empty
-  if [ -z "${KEYS_AVB_BASE64}" ] || [ -z "${KEYS_CERT_OTA_BASE64}" ] || [ -z "${KEYS_OTA_BASE64}" ]; then
-    echo "Error: One or more BASE64 encoded values are empty. Please ensure all required keys are set."
+  if [ -z "${KEYS_AVB_BASE64}" ]; then 
+    echo "Error: KEYS_AVB_BASE64 is empty."
+    exit 1
+  fi
+    if [ -z "${KEYS_CERT_OTA_BASE64}" ]; then 
+    echo "Error: KEYS_CERT_OTA_BASE64 is empty."
+    exit 1
+  fi
+  if [ -z "${KEYS_OTA_BASE64}" ]; then 
+    echo "Error: KEYS_OTA_BASE64 is empty."
     exit 1
   fi
 
