@@ -10,6 +10,7 @@ on:
       device-id:
         description: Device code name
         required: true
+        default: bluejay
       root:
         description: Add root to the build
         required: false
