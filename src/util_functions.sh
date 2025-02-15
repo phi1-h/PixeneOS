@@ -210,6 +210,8 @@ function patch_ota() {
     args+=("--module-bcr" "${WORKDIR}/modules/bcr.zip")
     args+=("--module-oemunlockonboot" "${WORKDIR}/modules/oemunlockonboot.zip")
     args+=("--module-alterinstaller" "${WORKDIR}/modules/alterinstaller.zip")
+    args+=("--module-lesseraudio" "${WORKDIR}/modules/lesseraudio.zip")
+
 
     # Module signatures
     args+=("--module-custota-sig" "${WORKDIR}/signatures/custota.zip.sig")
@@ -340,6 +342,9 @@ function url_constructor() {
   if [[ "${repository}" == "my-avbroot-setup" ]]; then
     URL="${DOMAIN}/phi1-h/${repository}"
   else
+    if [[ "${repository}" == "LesserAudioSwitchMagisk" ]]; then
+      user='kelno'
+    fi
     # Afsr, avbroot, and custota-tool are binaries and are platform dependent. Modules are zipped files.
     if [[ "${repository}" == "afsr" || "${repository}" == "avbroot" || "${repository}" == "custota-tool" ]]; then
       local suffix="${ARCH}"
