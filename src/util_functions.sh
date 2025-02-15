@@ -366,7 +366,7 @@ function url_constructor() {
     URL="${download_page}/${version}/${application}"
     SIGNATURE_URL="${download_page}/${version}/${application}.sig"
   fi
-  if [[ "${repository}" == "LesserAudioSwitchMagisk" ]]; then
+  if [[ "${repository}" == "lesseraudio" ]]; then
     URL='https://github.com/kelno/LesserAudioSwitchMagisk/releases/download/rev4/LesserAudioSwitchMagisk_4.zip'
   fi
 
@@ -490,7 +490,7 @@ function check_toml_env() {
 
 function supported_tools() {
   local arg="${1:-}"
-  local tools=("avbroot" "afsr" "alterinstaller" "custota" "custota-tool" "msd" "bcr" "oemunlockonboot" "my-avbroot-setup")
+  local tools=("avbroot" "afsr" "alterinstaller" "custota" "custota-tool" "msd" "bcr" "oemunlockonboot" "my-avbroot-setup" "lesseraudio")
 
   if [[ "${arg}" == "cdd" ]]; then
     echo "${tools[@]}"
