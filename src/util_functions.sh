@@ -342,9 +342,7 @@ function url_constructor() {
   if [[ "${repository}" == "my-avbroot-setup" ]]; then
     URL="${DOMAIN}/phi1-h/${repository}"
   else
-    if [[ "${repository}" == "LesserAudioSwitchMagisk" ]]; then
-      user='kelno'
-    fi
+
     # Afsr, avbroot, and custota-tool are binaries and are platform dependent. Modules are zipped files.
     if [[ "${repository}" == "afsr" || "${repository}" == "avbroot" || "${repository}" == "custota-tool" ]]; then
       local suffix="${ARCH}"
@@ -367,6 +365,9 @@ function url_constructor() {
 
     URL="${download_page}/${version}/${application}"
     SIGNATURE_URL="${download_page}/${version}/${application}.sig"
+  fi
+  if [[ "${repository}" == "LesserAudioSwitchMagisk" ]]; then
+    URL='https://github.com/kelno/LesserAudioSwitchMagisk/releases/download/rev4/LesserAudioSwitchMagisk_4.zip'
   fi
 
   echo -e "URL for \`${repository}\`: ${URL}"
