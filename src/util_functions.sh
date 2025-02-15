@@ -490,7 +490,7 @@ function check_toml_env() {
 
 function supported_tools() {
   local arg="${1:-}"
-  local tools=("avbroot" "afsr" "alterinstaller" "custota" "custota-tool" "msd" "bcr" "oemunlockonboot" "my-avbroot-setup" "lesseraudio")
+  local tools=("avbroot" "afsr" "alterinstaller" "custota" "custota-tool" "oemunlockonboot" "my-avbroot-setup" "lesseraudio")
 
   if [[ "${arg}" == "cdd" ]]; then
     echo "${tools[@]}"
