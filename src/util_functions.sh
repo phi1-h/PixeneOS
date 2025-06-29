@@ -363,7 +363,7 @@ function url_constructor() {
     SIGNATURE_URL="${download_page}/${version}/${application}.sig"
   fi
   if [[ "${repository}" == "lesseraudio" ]]; then
-    URL='https://github.com/kelno/LesserAudioSwitchMagisk/releases/download/rev4/LesserAudioSwitchMagisk_4.zip'
+    URL='https://github.com/phi1-h/micswitcher/archive/refs/tags/0.1.zip'
   fi
 
   echo -e "URL for \`${repository}\`: ${URL}"
